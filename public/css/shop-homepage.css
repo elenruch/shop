@@ -1,0 +1,99 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+    background: #f5f5f5;
+}
+
+#page-wrapper {
+    position: relative;
+}
+
+.base_row {
+    margin-top: 20px;
+}
+
+.btn-cart {
+    float: right;
+}
+
+.wid {
+    width: 42px
+}
+
+.btn-times {
+    color: red;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.bas {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.modal-window {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, .7);
+}
+
+.modal-window .modal-content {
+    display: none;
+    position: absolute;
+    top: 100px;
+    bottom: 100px;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    padding: 10px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.modal-window .close-modal {
+    position: absolute;
+    top: 0;
+    right: 9px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-window .modal-scroll {
+    position: absolute;
+    bottom: 0;
+    top: 78px;
+    overflow-y: scroll;
+}
+
+.modal-window .modal-content:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: rgba(226,226,226,0);
+    background: -moz-linear-gradient(top, rgba(226,226,226,0) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,0)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(226,226,226,0) 0%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(226,226,226,0) 0%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(226,226,226,0) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(226,226,226,0) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#ffffff', GradientType=0 );
+}
