@@ -13,6 +13,8 @@
 
 Route::get('/', 'BaseController@getIndex');
 Route::get('/catalog/{id}','ProductController@getCatalog');
+Route::get('/search','ProductController@search');
+Route::get('/product/{id}','ProductController@getProduct');
 Route::get('/ajax/{id}','AjaxController@getProduct');
 
 Auth::routes();

@@ -3,7 +3,7 @@
     <a href="#"><img class="card-img-top" src="{{asset('uploads/thumb/'.$one->picture)}}" alt=""></a>
     <div class="card-body">
         <h4 class="card-title">
-            <a href="#">{{$one->name}}</a>
+            <a href="/product/{{$one->id}}">{{$one->name}}</a>
         </h4>
         <div class="col-sm-6">
         <h5>$24.99</h5>
