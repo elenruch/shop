@@ -12,10 +12,14 @@
 */
 
 Route::get('/', 'BaseController@getIndex');
+Route::get('/catalog','ProductController@getCatalog');
 Route::get('/catalog/{id}','ProductController@getCatalog');
+Route::get('/catalog/{category_id}/{id}','ProductController@getProductPage');
 Route::get('/search','ProductController@search');
-Route::get('/product/{id}','ProductController@getProduct');
 Route::get('/ajax/{id}','AjaxController@getProduct');
+
+Route::get('/chat/get','AjaxController@chatGet');
+Route::post('/chat/send','AjaxController@chatSend');
 
 Auth::routes();
 

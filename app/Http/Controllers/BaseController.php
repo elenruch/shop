@@ -13,6 +13,18 @@ class BaseController extends Controller
     }
     public function getStatic($url=null){
         $obj = Maintext::where('url', $url)->first();
+
+        $breadcrumbs = [];
+        $breadcrumbs[] = [
+            'label' => 'Главная',
+            'url' => url('/'),
+        ];
+        $breadcrumbs[] = [
+            'label' => $obj['name'],
+            'url' => url('/' . $url),
+        ];
+        view()->share('breadcrumbs', $breadcrumbs);
+
         return  view('static', compact('obj'));
     }
 }

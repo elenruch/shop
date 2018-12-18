@@ -4,16 +4,7 @@
     <script src="{{asset('js/modal.js')}}"></script>
 @endsection
 @section('content')
-    <form class="form-inline my-2 my-lg-0 mr-lg-2" action="/search">
-        <div class="input-group">
-            <input class="form-control" type="text" name="s" value="{{$search}}">
-            <span class="input-group-append">
-                <button class="btn btn-default" type="button">
-                  search
-                </button>
-              </span>
-        </div>
-    </form>
+<h2>{{$search}}</h2>
     <br/>
     <div class="row base_row">
         @if (empty($products))

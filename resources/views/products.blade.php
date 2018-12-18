@@ -1,8 +1,4 @@
 @extends('layouts.base')
-@section('scripts')
-@parent
-<script src="{{asset('js/modal.js')}}"></script>
-@endsection
 @section('content')
     <div class="row base_row">
         @foreach($products as $one)
