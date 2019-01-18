@@ -8,4 +8,8 @@
         @endforeach
         <p align="center">{!! $products->links() !!}</p>
     </div>
+
+    <div class="adw">
+        <img src="/img/adw2.png">
+    </div>
 @endsection()

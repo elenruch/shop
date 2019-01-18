@@ -27,6 +27,10 @@
         </a>
     </div>
 
+    <div class="adw">
+        <img src="/img/adw2.png">
+    </div>
+
     <div class="row">
         @foreach($lasts as $one)
             <div class="col-lg-4 col-md-6 mb-4">

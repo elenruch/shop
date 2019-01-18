@@ -22,7 +22,8 @@ class Catalog extends Model {
     protected $table    = 'catalog';
     
     protected $fillable = [
-          'name',
+          'name_ru',
+          'name_en',
           'body',
           'picture',
           'type'

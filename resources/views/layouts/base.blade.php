@@ -4,6 +4,7 @@
     @include('templates.head')
     <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/shop-homepage.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     @section('styles')
     @show
 </head>
@@ -35,16 +36,16 @@
         </div>
     </footer>
     <div class="chat card shadow<?php if (!isset($_COOKIE['chat-name'])): ?> with-name<?php endif ?>" id="chat">
-        <div class="chat-title card-header text-white bg-primary">Онлайн чат</div>
+        <div class="chat-title card-header text-white bg-primary">{{ __('messages.chat') }}</div>
         <div class="chat-messages card-body">
             <ul></ul>
         </div>
         <div class="chat-own card-footer">
             <form action="/chat/send" id="chat-form">
-                <input class="form-control mb-3" type="<?php if (!isset($_COOKIE['chat-name'])): ?>text<?php else: ?>hidden<?php endif ?>" name="name" placeholder="Имя" required="required"<?php if (isset($_COOKIE['chat-name'])): ?> value="<?= $_COOKIE['chat-name'] ?>"<?php endif ?>>
+                <input class="form-control mb-3" type="<?php if (!isset($_COOKIE['chat-name'])): ?>text<?php else: ?>hidden<?php endif ?>" name="name" placeholder="{{ __('messages.chat_name') }}" required="required"<?php if (isset($_COOKIE['chat-name'])): ?> value="<?= $_COOKIE['chat-name'] ?>"<?php endif ?>>
                 <div class="form-row">
                     <div class="col-sm-9">
-                        <textarea class="form-control" name="message" rows="2" placeholder="Сообщение" required="required"></textarea>
+                        <textarea class="form-control" name="message" rows="2" placeholder="{{ __('messages.chat_message') }}" required="required"></textarea>
                     </div>
                     <div class="col-sm-3">
                         <input class="btn btn-primary btn-sm btn-block" type="submit" value="&raquo;">

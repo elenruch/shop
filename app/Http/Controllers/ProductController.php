@@ -11,20 +11,20 @@ class ProductController extends Controller
     {
         $breadcrumbs = [];
         $breadcrumbs[] = [
-            'label' => 'Главная',
-            'url' => url('/'),
+            'label' => __('messages.home'),
+            'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/'),
         ];
         $breadcrumbs[] = [
-            'label' => 'Каталог',
-            'url' => url('/catalog'),
+            'label' => __('messages.catalog'),
+            'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/catalog'),
         ];
         if (isset($id)) {
             $category = Catalog::where('id', $id)->first();
             $products = Products::where('categories_id', $id);
 
             $breadcrumbs[] = [
-                'label' => $category['name'],
-                'url' => url('/catalog/' . $id),
+                'label' => $category['name_' . (\App\Http\Middleware\LocaleMiddleware::getLocale() === null ? 'ru' : \App\Http\Middleware\LocaleMiddleware::getLocale())],
+                'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/catalog/' . $id),
             ];
         } else {
             $products = Products::query();
@@ -40,16 +40,17 @@ class ProductController extends Controller
         if (mb_strlen($search) < 3) {
             $products = [];
         } else {
-            $products = Products::where('body', 'like', '%' . $search . '%')->orderBy('id', 'DESC')->paginate(18);
+            $field = 'body_' . (\App\Http\Middleware\LocaleMiddleware::getLocale() === null ? 'ru' : \App\Http\Middleware\LocaleMiddleware::getLocale());
+            $products = Products::where($field, 'like', '%' . $search . '%')->orderBy('id', 'DESC')->paginate(18);
         }
 
         $breadcrumbs = [];
         $breadcrumbs[] = [
-            'label' => 'Главная',
-            'url' => url('/'),
+            'label' => __('messages.home'),
+            'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/'),
         ];
         $breadcrumbs[] = [
-            'label' => 'Поиск',
+            'label' => __('messages.search'),
             'url' => url()->current(),
         ];
         view()->share('breadcrumbs', $breadcrumbs);
@@ -72,20 +73,20 @@ class ProductController extends Controller
 
         $breadcrumbs = [];
         $breadcrumbs[] = [
-            'label' => 'Главная',
-            'url' => url('/'),
+            'label' => __('messages.home'),
+            'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/'),
         ];
         $breadcrumbs[] = [
-            'label' => 'Каталог',
-            'url' => url('/catalog'),
+            'label' => __('messages.catalog'),
+            'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/catalog'),
         ];
         $breadcrumbs[] = [
-            'label' => $category['name'],
-            'url' => url('/catalog/' . $category_id),
+            'label' => $category['name_' . (\App\Http\Middleware\LocaleMiddleware::getLocale() === null ? 'ru' : \App\Http\Middleware\LocaleMiddleware::getLocale())],
+            'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/catalog/' . $category_id),
         ];
         $breadcrumbs[] = [
-            'label' => $product['name'],
-            'url' => url('/catalog/' . $category_id . '/' . $id),
+            'label' => $product['name_' . (\App\Http\Middleware\LocaleMiddleware::getLocale() === null ? 'ru' : \App\Http\Middleware\LocaleMiddleware::getLocale())],
+            'url' => url(\App\Http\Middleware\LocaleMiddleware::getLocale() . '/catalog/' . $category_id . '/' . $id),
         ];
         view()->share('breadcrumbs', $breadcrumbs);
 

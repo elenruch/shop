@@ -167,3 +167,42 @@ body {
 #chat .chat-own input[type='submit'] {
     line-height: 40px;
 }
+
+h1 {
+    display: block;
+    width: 100%;
+}
+
+h1 .print-version {
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.body {
+    margin: 30px 0;
+    display: block;
+    width: 100%;
+}
+
+.adw {
+    margin: 30px 0;
+    display: block;
+    width: 100%;
+}
+
+.adw img {
+    width: 100%;
+    max-width: 100%;
+}
+
+@media print {
+    .print-none {
+        display: none !important;
+    }
+
+    .adw,
+    #chat {
+        display: none !important;
+    }
+}

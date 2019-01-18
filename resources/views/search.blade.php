@@ -21,4 +21,8 @@
             @endforeach
         @endif
     </div>
+
+    <div class="adw">
+        <img src="/img/adw2.png">
+    </div>
 @endsection()
